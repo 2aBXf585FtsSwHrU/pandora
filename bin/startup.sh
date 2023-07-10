@@ -10,7 +10,7 @@ fi
 
 if [ -n "${PANDORA_ACCESS_TOKEN}" ]; then
   mkdir -p "${USER_CONFIG_DIR}"
-
+  ls -l ${USER_CONFIG_DIR}
   echo "${PANDORA_ACCESS_TOKEN}" >"${USER_CONFIG_DIR}/access_token.dat"
 fi
 
@@ -32,10 +32,6 @@ fi
 
 if [ -n "${PANDORA_VERBOSE}" ]; then
   PANDORA_ARGS="${PANDORA_ARGS} -v"
-fi
-
-if [ -n "${PANDORA_THREADS}" ]; then
-  PANDORA_ARGS="${PANDORA_ARGS} --threads ${PANDORA_THREADS}"
 fi
 
 if [ -n "${PANDORA_CLOUD}" ]; then
